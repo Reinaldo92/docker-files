@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    mysql:
+      image: 'mysql:latest'
+      restart: always
+      command:
+          - '--default-authentication-plugin=mysql_native_password'
+          - '--character-set-server=utf8mb4'
+          - '--collation-server=utf8mb4_unicode_ci'
+      ports:
+          - '3307:3306'
+      environment:
+          MYSQL_ALLOW_EMPTY_PASSWORD: 1
+          MYSQL_USER: 'toor'
+          MYSQL_ROOT_PASSWORD: 'toor'
+      volumes:
+          - './db_data:/var/lib/mysql'
+          - './files:/var/lib/mysql-files'
