@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+
+  db_neo4j:
+    image: neo4j:latest
+    restart: always
+    environment:
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db_mysql:
