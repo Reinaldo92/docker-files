@@ -17,3 +17,10 @@ services:
       volumes:
           - './db_data:/var/lib/mysql'
           - './files:/var/lib/mysql-files'
+
+      networks:
+          - db_mysql81
+
+networks:
+  db_mysql81:
+    driver: bridge
